@@ -4,7 +4,7 @@ Um Progressive Web App (PWA) para comparar preços de produtos entre S.Romeu, M.
 
 ## Como Usar
 1. Hospede os arquivos no GitHub Pages (ou outro servidor).
-2. Acesse o link gerado em um navegador.
+2. Acesse o link gerado em um navegador (ex.: https://seu-usuario.github.io/price-compare-app/).
 3. Adicione produtos, edite ou exclua-os usando os botões na tabela.
 4. Para Android: Clique em "Adicionar à tela inicial" no Chrome para instalar como PWA.
 

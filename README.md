@@ -3,10 +3,10 @@
 Um Progressive Web App (PWA) para comparar preços de produtos entre S.Romeu, M.Jessé e S. Zé do Feira.
 
 ## Como Usar
-1. Hospede os arquivos no GitHub Pages (ou outro servidor).
-2. Acesse o link gerado em um navegador (ex.: https://seu-usuario.github.io/price-compare-app/).
+1. Hospede os arquivos no GitHub Pages no repositório `M-Economy`.
+2. Acesse o link `https://seu-usuario.github.io/M-Economy/`.
 3. Adicione produtos, edite ou exclua-os usando os botões na tabela.
-4. Para Android: Clique em "Adicionar à tela inicial" no Chrome para instalar como PWA.
+4. No Chrome no Android, clique nos três pontos e selecione "Instalar aplicativo" ou "Adicionar à tela inicial".
 
 ## Tecnologias
 - HTML
@@ -15,5 +15,6 @@ Um Progressive Web App (PWA) para comparar preços de produtos entre S.Romeu, M.
 - PWA (Manifest e Service Worker)
 
 ## Requisitos
-- Navegador moderno (Chrome, Firefox, etc.)
+- Navegador moderno (Chrome recomendado)
 - Ícones `icon.png` (192x192) e `icon-large.png` (512x512) na raiz
+- Hospedagem em HTTPS (GitHub Pages já oferece)

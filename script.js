@@ -1,6 +1,19 @@
 let products = [];
 let editingIndex = -1;
 
+function loadProducts() {
+    const savedProducts = localStorage.getItem('products');
+    if (savedProducts) {
+        products = JSON.parse(savedProducts);
+        updateTable();
+        updateSummary();
+    }
+}
+
+function saveProducts() {
+    localStorage.setItem('products', JSON.stringify(products));
+}
+
 function addOrUpdateProduct() {
     const productName = document.getElementById('productName').value;
     const priceStore1 = parseFloat(document.getElementById('priceStore1').value) || 0;
@@ -39,6 +52,7 @@ function addOrUpdateProduct() {
 
     updateTable();
     updateSummary();
+    saveProducts();
     clearInputs();
 }
 
@@ -57,6 +71,7 @@ function deleteProduct(index) {
         products.splice(index, 1);
         updateTable();
         updateSummary();
+        saveProducts();
     }
 }
 
@@ -103,3 +118,5 @@ function clearInputs() {
     document.getElementById('priceStore2').value = '';
     document.getElementById('priceStore3').value = '';
 }
+
+window.addEventListener('load', loadProducts);

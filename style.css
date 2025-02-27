@@ -23,14 +23,22 @@ h1 {
     margin: 20px 0;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha verticalmente */
 }
 
-input {
+.input-section input {
     padding: 8px;
-    font-size: 16px;
+    font-size: 14px; /* Reduzi o tamanho da fonte para caber melhor */
     border: 1px solid #ddd;
     border-radius: 4px;
-    flex: 1;
+    width: 150px; /* Largura fixa para reduzir o tamanho */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+}
+
+.input-section input#productName {
+    width: 200px; /* Um pouco mais largo para o nome do produto */
 }
 
 button {
@@ -40,6 +48,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px; /* Tamanho da fonte ajustado */
 }
 
 button:hover {
@@ -103,4 +112,22 @@ tr:nth-child(even) {
 
 .delete-btn:hover {
     background-color: #c82333;
+}
+
+.status {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.online {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.offline {
+    background-color: #f8d7da;
+    color: #721c24;
 }

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'm-economy-cache-v2';
+const CACHE_NAME = 'm-economy-cache-v3';
 const urlsToCache = [
     '/M-Economy/',
     '/M-Economy/index.html',
@@ -39,13 +39,17 @@ self.addEventListener('fetch', event => {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request).then(networkResponse => {
-                    if (!networkResponse || networkResponse.status !== 200) {
-                        return caches.match('/M-Economy/index.html');
-                    }
-                    return networkResponse;
-                });
+                return fetch(event.request)
+                    .then(networkResponse => {
+                        if (!networkResponse || networkResponse.status !== 200) {
+                            return caches.match('/M-Economy/index.html');
+                        }
+                        const responseToCache = networkResponse.clone();
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.put(event.request, responseToCache));
+                        return networkResponse;
+                    })
+                    .catch(() => caches.match('/M-Economy/index.html'));
             })
-            .catch(() => caches.match('/M-Economy/index.html'))
     );
 });

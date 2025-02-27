@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <h1>M-Economy</h1>
+        <div id="status" class="status"></div>
         <div class="input-section">
             <input type="text" id="productName" placeholder="Nome do produto">
             <input type="number" id="priceStore1" placeholder="Preço S.Romeu (R$)" step="0.01">
@@ -48,6 +49,16 @@
                     .catch(err => console.error('Erro ao registrar Service Worker:', err));
             });
         }
+
+        // Atualiza o status online/offline
+        function updateOnlineStatus() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = navigator.onLine ? 'Online' : 'Offline';
+            statusDiv.className = navigator.onLine ? 'status online' : 'status offline';
+        }
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
     </script>
 </body>
 </html>
